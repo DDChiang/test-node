@@ -1,0 +1,327 @@
+body {
+  padding:  0;
+  margin: 0;
+}
+
+#sec-1 {
+  background: url('goldenglobe.jpg') fixed;
+  background-size: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 160em;
+  position:relative;
+ 
+}
+
+.content {
+ text-align: center; 
+}
+
+#content-1{ 
+  height: 30vh; 
+  position: absolute; 
+  text-align: center; 
+  color: white;
+  top: 40vh; 
+  width: 90%; 
+ padding-left: 5%;
+}
+
+#hero-title {
+  font-family: 'Lato', century;
+  font-weight: 300;
+  color: white;
+  font-size: 8em;
+  letter-spacing: .1em;
+}
+
+#caption {
+  font-family: 'Lato', century;
+  font-weight: 300;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: .2em;
+}
+
+#content-2{ 
+  font-family: 'Lato';
+  font-weight: 300;
+  position: absolute; 
+  text-align: center; 
+  font-size: 1.5em;
+  top: 40em; 
+  width: 90%; 
+ padding-left: 5%;
+ color: #dddddd;
+}
+
+#content-2 .half-1 {
+  width: 42%;
+  float: left;
+  margin-right: 5%;
+  margin-left: 5%;
+   background: rgba(0,0,0,.8);
+  padding: 1em;
+}
+
+#content-2 .half-2 {
+  width: 40%;
+  float: left;
+  
+}
+
+.half-2 img {
+  width: 100%;
+}
+
+.timeline {
+  width: 50%;
+  min-width: 500px;
+  float: left;
+  display: block;
+  margin: auto;
+  text-align: left;
+  background: rgba(0,0,0,.8);
+  padding: 1em;
+  margin-top: 2em;
+  font-size: .9em;
+  margin-right: 6em;
+}
+
+#blurb_title {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#timeline_img {
+  float: left;
+  margin-right: .5em;
+}
+
+#blurb {
+  float: left;
+  
+}
+
+
+.flight_specs {
+  margin-top: 2em;
+  float: right;
+  margin-left: 2em;
+  text-align: left;
+  background: rgba(0,0,0,.8);
+  color: red;
+  padding: 1em;
+  
+}
+
+#sec-2 {
+  background: url('starrysky_ult.jpg') fixed;
+  background-size: 100%;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 550px;
+  position:relative;
+ 
+}
+
+#content-3 {
+  font-family: 'Lato';
+  font-weight: 300;
+  text-align: center; 
+  font-size: 1.5em;
+  width: 90%; 
+  padding-left: 5%;
+  color: #dddddd;
+}
+
+.options {
+  width :100%;
+  float: left;
+  margin-top: 6em;
+}
+
+.button {
+  text-align: center;
+  background: rgba(0,20,20,.8);
+  margin: .4em;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.button a {
+  text-decoration: none;
+  color: red;
+  display: block;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.button:hover {
+  background: rgba(0,20,20,1);
+  
+}
+
+.button a:hover {
+  color: purple;
+}
+
+.footer {
+  background-color: #181818;
+  height: 40px;
+  position: absolute;
+  width: 100%;
+}
+
+#footer-content {
+  color: #808080;
+  font-family: 'Lato', myriad pro, arial;
+  font-weight: 300;
+  font-size: .75em;
+  padding-left: 1em;
+  position : relative;
+  top: .5em;
+}
+
+#up {
+  position: fixed;
+  bottom: 1em;
+  left: 44%;
+  opacity: .6;
+  cursor: pointer;
+  -webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+
+#up img {
+  width: 60px;
+}
+
+#up:hover {
+  opacity: .8;
+}
+
+@media (max-width: 732px) {
+  #sec-1 {
+    min-height: 160em;
+  }
+  
+  
+}
+@media (max-width: 683px) {
+  #sec-1 {
+    min-height: 150em;
+  }
+  
+  #hero-title {
+    font-size: 6em;
+  }
+  
+  #caption {
+    font-size: 1.3em;
+  }
+
+  #content-2 {
+    top: 110vh;
+	font-size: 1.3em;
+  }
+  
+  #content-2 .half-1 {
+    width: 80%;
+  }
+  
+  #content-2 .half-2 {
+    width: 60%;
+	margin-left: 20%;
+	margin-top: 1.5em;
+  }
+  
+  .timeline {
+    min-width: 440px;
+  }
+  
+  #timeline_img  img{
+    width: 26.5px;
+  }
+}
+
+@media (max-width: 534px) {
+  .timeline {
+    width: 90%;
+	min-width: 200px;
+	font-size: .76em;
+  }
+  
+  #timeline_img  img{
+    width: 23px;
+  }
+  
+}
+
+@media (max-width: 486px) {
+  #content-1 {
+    top: 8em;
+	height: ;
+  }
+  
+  
+  #sec-1 {
+    min-height: 57em;
+	background: url('goldenglobe.jpg') fixed;
+	background-size:1200px;
+  }
+
+  #hero-title {
+    font-size: 4em;
+  }
+  
+  #caption {
+    font-size: .9em;
+  }
+  
+  #content-2 {
+    top: 12em;
+  }
+  
+  #content-2 .half-1 {
+    font-size: .8em;
+  }
+  
+  .timeline {
+    display: none;
+  }
+  
+ 
+  .flight_specs {
+    display: none;
+  }
+  
+  #sec-2 {
+    min-height: 380px;
+  }
+  
+  .options {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 404px) {
+   .button {
+     font-size: .8em;
+   }
+   
+}
+
+@media (max-width: 336px) {
+ 
+  #hero-title {
+    font-size: 2em;
+  }
+  
+  #up {
+    left:38%;
+  }
+}

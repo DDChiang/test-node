@@ -1,0 +1,439 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: auto;
+  background: url('chalk-bg.jpg') repeat;
+  background-size: 100%;
+  overflow: hidden;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.home_page_wrapper {
+  width: 100%;
+  overflow: hidden;
+  position:absolute;
+  -webkit-transition: all .8s ease-in-out;
+  -moz-transition: all .8s ease-in-out;
+  -o-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+}
+
+.home_page {
+  width: 100%;
+  height: 40em;
+  overflow: hidden;
+}
+
+.centerpiece {
+  position: absolute;
+  top: 14em;
+  right: 29%;
+  z-index:2;
+  text-shadow: 2px 2px #181818;
+}
+
+.logo_box {
+  color: white;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 3em;
+  width: 320px;
+  text-align: center;
+  margin-right: .5em;
+  border-right: .05em white solid;
+  float: left;
+ }
+ 
+ .logo_box a {
+    color: white;
+  }
+  
+  
+  
+ #logo-one, #logo-two, #logo-three {
+   position:relative;
+   z-index: 1;
+ }
+ 
+ .front_blurb {
+   color: white;
+   font-size: 1.7em;
+   width: 200px;
+   float: left;
+ }
+ 
+li {
+  list-style-type: none;													
+}
+
+a {
+  text-decoration:none;
+}
+
+.home-navbar {
+  float: left;
+  position:relative;
+  top: .5em;
+  left: 27%;
+  z-index: 40;
+}
+
+.home-navbar li {
+  margin-top: .5em;
+  float: left;
+  margin-left: .2em;
+  
+}
+
+.home-navbar  a {
+  color: #ff9900;
+   font-size: 1.7em;
+   background: black;
+   padding-left: 1em;
+   padding-right: 1em;
+   
+}
+
+.home-navbar a:hover {
+  color: white;
+  background: #ff3300;
+}
+
+#slideout_menu_icon {
+  width: 100%;
+  cursor: pointer;
+  display: none;
+  padding-top: .2em;
+  padding-bottom: .3em;
+  position: relative;
+  z-index: 4;
+  float: left;
+  height: 30px;
+  background:black;
+}
+
+#slideout_menu_icon img {
+  width: 40px;
+  display: block;
+  margin: auto;
+  
+}
+
+.panel {
+   min-width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+	margin-top: -150%;
+	position:absolute;
+	color: white;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
+
+.panel:target {
+  margin-top: 0%;
+ 
+}
+
+#home:target ~ .logo_box #link-home,
+#menu:target ~ .home-navbar #link-menu,
+#about:target ~.home-navbar #link-about,
+#contact:target ~ .home-navbar #link-contact {
+  
+}
+
+#menu, #hours, #about, #contact {
+  background: url('chalk-bg.jpg') repeat;
+  background-size: 100%;
+  z-index: 2;
+}
+
+#menu #content, #hours #content, #about #content, #contact #content {
+  margin-top: 5em;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  font-size: 1.2em;
+  letter-spacing: .1em;
+}
+
+#pie-1 {
+  position:absolute;
+  top: -1em;
+  left: .5em;
+ 
+}
+
+#pie-3 {
+  position:absolute;
+  top: -13em;
+  left: -5em;
+  transition: all 0.3s linear;
+}
+
+#pie-4 {
+  position:absolute;
+  top: -10em;
+  right: -10em;
+  transition: all 0.3s linear;
+}
+
+#pie-5 {
+  position:absolute;
+  bottom: 0em;
+  left: -10em;
+}
+
+#pie-5 img {
+  width: 400px;
+}
+
+.pie img {
+transition: all 0.3s linear;
+}
+
+.pie img:hover {
+  transform: scale(1.2);
+}
+
+.footer {
+  color: white;
+  position:fixed;
+  z-index:2;
+  bottom: 0em;
+  left: .5em;
+  background: #181818;
+  width: 100%;
+}
+
+#footer_text {
+  position: relative;
+  left: .5em;
+}
+
+.soc_med{
+  position: absolute;
+  width: 63px;
+  transition: all 0.2s linear;
+  z-index: 50;
+}
+
+a#twit {
+  bottom: 8.8em;
+  left: -1em;
+}
+
+a#twit:hover {
+  left: 0em;
+}
+
+a#fb {
+  bottom: 5.9em;
+  left: -1em;
+}
+a#fb:hover {
+  left: 0em;
+}
+a#mail {
+  bottom: 3em;
+  left: -1em;
+}
+
+a#mail:hover {
+  left: 0em;
+}
+
+
+@media (max-width: 1038px) {
+  .centerpiece {
+    right: 14%;
+  }
+  
+  #pie-3 {
+    top: -6em;
+  }
+  
+  #pie-4 {
+    top: -6em;
+  }
+  
+  #pie-3 img, #pie-4 img, #pie-5 img {
+    width: 300px;
+  }
+
+  .home-navbar {
+    left: 20%;
+  }
+}
+
+@media (max-width: 891px) {
+   .home-navbar {
+     left: 16%;
+   }
+}
+
+@media (max-width: 769px) {
+   .home-navbar {
+     left: 11%;
+   }
+}
+
+@media (max-width: 677px) {
+   .centerpiece {
+     right: 8%;
+   }
+   
+   .logo_box {
+     font-size: 2em;
+     width: 280px;
+   } 
+   
+   #pie-1 {
+     left: .7em;
+   }
+   #pie-1 img {
+     width: 230px;
+   }
+   
+   .front_blurb {
+     font-size: 1.5em;
+	 width: 190px;
+   }
+   .home-navbar {
+     left: 5%;
+   }
+   
+}
+
+@media (max-width: 634px) {
+  .panel {
+    margin-top: -200%;
+  }
+}
+
+@media (max-width: 590px) {
+  .home-navbar {
+    left: 0%;
+	top: 0em;
+	width: 100%;
+	display: none;
+	background: black;
+  }
+  
+  .home-navbar li {
+    margin-top: 0em;
+	margin-left: 0em;
+	width: 50%;
+	background: black;
+	padding: 0;
+  }
+  
+  .home-navbar a {
+    color: white;
+    text-align: center;
+	margin: auto;
+	display: block;
+  }
+  
+  #slideout_menu_icon {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+	
+  }
+  
+  #menu #content, #hours #content, #about #content, #contact #content {
+    margin-top: 3em;
+	line-height: 1.2em;
+	padding-bottom: 1em;
+  }
+  
+  .soc_med {
+    width: 48px;
+  }
+  
+  .soc_med img {
+    width: 50px;
+  }
+  
+  a#twit {
+    bottom: 7.4em;
+    left: -.8em;
+  }
+  
+  a#fb {
+    bottom: 5.2em;
+    left: -.8em;
+  }
+  
+  a#mail {
+    left: -.8em;
+  }
+}
+
+@media (max-width: 530px) {
+  .home_page {
+    height: 38em;
+  }
+  
+  .centerpiece {
+    right: 35%;
+	width: 200px;
+  }
+  
+  .logo_box {
+    border-right: 0px;
+  }
+  
+  .front_blurb {
+    position: relative;
+	top:  2em;
+	left: 2em;
+  }
+}
+
+@media (max-width: 388px) {
+  .home_page {
+    height: 33em;
+  }
+ 
+  .centerpiece {
+    top: 7.5em;
+  }
+  
+  #pie-1 {
+    left: 1.2em;
+  }
+  
+  #pie-1 img {
+    width: 200px;
+  }
+  
+  .front_blurb {
+    font-size: 1.3em;
+	top: .5em;
+	left: 3em;
+  }
+  
+  #pie-3 img, #pie-4 img, #pie-5 img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 369px) {
+  .home_page {
+    height: 25em;
+  }
+
+  .centerpiece {
+    right: 32%;
+  }
+  
+  #pie-3, #pie-4, #pie-5 {
+    display: none;
+  }
+}
