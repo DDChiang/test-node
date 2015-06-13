@@ -9,4 +9,8 @@ $(function () {
 			$("#quicklinks ul").css({"display":"none"});
 		}
 	});
+
+	$('#quicklinks').click(function () {
+	    $(this).slideToggle('fast', function () { });
+	});
 });
