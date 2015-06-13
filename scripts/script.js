@@ -11,6 +11,15 @@ $(function () {
 	//});
 
 	$('#quicklinks').click(function () {
-	    $(this> 'ul').slideToggle('fast', function () { });
+	    $('#quicklinks ul').slideToggle('fast', function () { });
 	});
+
+	$('body').click(function (e) {
+	    if (!(e.target.closest('#quicklinks')))
+	    {
+	        $("#quicklinks ul").css({ "display": "none" });
+
+	    }
+	});
+
 });
