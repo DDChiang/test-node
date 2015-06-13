@@ -11,6 +11,6 @@ $(function () {
 	});
 
 	$('#quicklinks').click(function () {
-	    $(this).slideToggle('fast', function () { });
+	    $(this> 'ul').slideToggle('fast', function () { });
 	});
 });
