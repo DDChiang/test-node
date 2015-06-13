@@ -22,4 +22,11 @@ $(function () {
 	    }
 	});
 
+	$('body').touchstart(function (e) {
+	    if (!(e.target.closest('#quicklinks'))) {
+	        $("#quicklinks ul").css({ "display": "none" });
+
+	    }
+	});
+
 });
