@@ -1,32 +1,20 @@
 $(function () {
-	console.log("ye");
-	//$("body").click(function (e) {
-	//	if (e.target.closest("#quicklinks")) {
-	//		console.log("he");
-	//		$("#quicklinks ul").slideToggle("fast", function () { });
-	//	}
-	//	else {
-	//		$("#quicklinks ul").css({"display":"none"});
-	//	}
-	//});
+    $('body').click(function (e) {
+        var navHidden = $('#quicklinks ul').is(':hidden');
+
+        if ((!(e.target.closest('#quicklinks'))) && (!navHidden))   //event.target.closest not supported in IE and mobile?
+        {
+            $('#quicklinks ul').slideToggle('fast', function () { });
+
+        }
+    });
 
 	$('#quicklinks').click(function () {
 	    $('#quicklinks ul').slideToggle('fast', function () { });
 	});
 
-	$('body').click(function (e) {
-	    if (!(e.target.closest('#quicklinks')))
-	    {
-	        $("#quicklinks ul").css({ "display": "none" });
-
-	    }
+	$(window).scroll(function () {
+	    $('#quicklinks ul').css({'display':'none'});
 	});
-
-	$('body').touchstart(function (e) {
-	    if (!(e.target.closest('#quicklinks'))) {
-	        $("#quicklinks ul").css({ "display": "none" });
-
-	    }
-	});
-
+	
 });

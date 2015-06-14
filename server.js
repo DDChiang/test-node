@@ -9,12 +9,15 @@ app.use(express.static('public'));
 app.use(express.static('stylesheet'));
 app.use(express.static('js'));
 app.use(express.static('scripts'));
-app.use(express.static(__dirname + '/sites'));
-
+app.use(express.static('partials'));
+app.use(express.static(__dirname + '/sites'));  //need __dirname
+app.use(express.static('ang'));
 
 //gain access to more static files      //looks for any directory that starts with /gringotts (even looks inside site!)
-app.use('/gringotts', express.static(__dirname + '/gringotts'));
-app.use('/odysey', express.static(__dirname + '/odysey'));
+//app.use('/gringotts', express.static(__dirname + '/gringotts'));
+//app.use('/odysey', express.static(__dirname + '/odysey'));
+
+//app.use('/test-ang', express.static(__dirname + '/test-ang'));
 
 app.get('/', function(req, res) {
     //res.send('Yo!');
@@ -25,22 +28,27 @@ app.get('/index.html', function (req, res) {
     res.sendFile(__dirname + '/' + 'index.html');
 });
 
-app.get('/page1.html', function (req, res) {
-    res.sendFile(__dirname + '/' + 'page1.html');
+app.get('/ang', function (req, res) {
+    res.sendFile(__dirname + '/' + '/ang/index-ang.html');
 });
 
-app.get('/web-apps.html', function (req, res) {
-    res.sendFile(__dirname + '/' + 'web-apps.html');
-});
+//app.get('/web-apps.html', function (req, res) {
+//    res.sendFile(__dirname + '/' + 'web-apps.html');
+//});
 
 //mini sites
-app.get('/gringotts', function (req, res) {
-    res.sendFile(__dirname + '/' + 'gringotts');
-});
+//app.get('/gringotts', function (req, res) {
+//    res.sendFile(__dirname + '/' + 'gringotts');
+//});
 
-app.get('/odysey', function (req, res) {
-    res.sendFile(__dirname + '/' + 'odysey');
-});
+//app.get('/odysey', function (req, res) {
+//    res.sendFile(__dirname + '/' + 'odysey');
+//});
+
+//ang
+//app.get('/test-ang', function (req, res) {
+//    res.sendFile(__dirname + '/' + 'index.html');
+//});
 
 //server listen
 

@@ -1,0 +1,50 @@
+﻿<section class="form">
+    <div class="form_container">
+        <form name="signUp" class="sign_up" action="/gringotts/#/fin.html" method="post" autocomplete='on' >
+            <h2>Sign up for an account <span>As easy as 1, 2, 3.</span></h2>
+            First Name: <input type="text" name="fName" ng-model="fName" required/>
+            Last Name: <input type="text" name="lName" ng-model="lName" required/>
+            <br />
+            Username: <input type="text" name="uName" ng-model="uName" required />
+            <br />
+            Email: <input type="email" name="email" ng-model="email" required/>
+            <br />
+            Retype Email: <input type="email" name="emailCon" ng-model="emailCon" required/>
+            <br />
+            Password: <input type="password" name="password" ng-model="password" required/>
+            <br />
+            Retype password: <input type="password" name="passwordCon" ng-model="passwordCon" required />
+            <br />
+            <input type="submit" value="Start Your Account" ng-disabled="signUp.fName.$pristine || signUp.lName.$pristine || 
+                signUp.email.$invalid || signUp.email.$pristine || signUp.password.$pristine || (signUp.email.value != signUp.emailCon.value) || (signUp.password.value != signUp.passwordCon.value)"/>
+        </form>
+        <p>Already have an account? <a href="#">Log in</a></p>
+     </div>
+    <aside>
+        <h2>Reach a customer representative</h2>
+        <img src="logos/phone.png" />
+    </aside>
+</section>
+<section class="contact">
+    <form name="contact" action="/gringotts/#/contact_fin.html" method="post">
+        <h2>Leave us a note</h2>
+        Name: <input type="text" name="contactName" ng-model="contactName" required/><br />
+        Email: <input type="email" name="contactEmail" ng-model="contactEmail" required/><br />
+        What's on your mind? <input type="textarea" placeholder="Type text here" ng-model="contactText" required/><br />
+        Type of problem: 
+       
+        <input type="radio" ng-model="contact.problemType" value="1" ng-required="!contact.problemType"/>trouble signing up  
+        <input type="radio" ng-model="contact.problemType" value="2" ng-required="!contact.problemType"/>report site issue 
+        <input type="radio" ng-model="contact.problemType" value="3" ng-required="!contact.problemType"/>other(unspecified)
+        <br />
+        <input type="submit" value="submit" ng-disabled="contact.contactName.$pristine || contact.contactEmail.$pristine || contact.contactEmail.$invalid
+            || contact.contactText.$pristine || (!contact.problemType)"/>
+    </form>
+</section>
+<section class="test">
+    <form name="testForm" method="post" action="">
+        Name<input type="text" name="name" ng-model="tName"/>
+        Email<input type="email" name="email" ng-model="tName"/>
+        <input type="submit" value="submit" />
+    </form>
+</section>
