@@ -75,6 +75,7 @@ $(function () {
             e.preventDefault();
             alert('This page does not exist yet. Try out the forms');
             $('input').eq(0).focus();
+
         }
 
     });

@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({//support url-encoded bodies
     extended: true
 }));
 
-//add middle ware to parse post data of body
+//add middle ware to parse post data of body    //hmm doesn't work smoothly
 //app.use(express.json());
 //app.use(express.urlencoded());
 

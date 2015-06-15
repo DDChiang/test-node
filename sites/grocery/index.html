@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="grocery">
+<head>
+    <meta charset="utf-8" />
+    <title>Grocery</title>
+    <script src="/angular.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!--  <script src="script.js"></script>-->
+</head>
+<body ng-controller="groceryCtrl">
+    <h1>Dynamic Grocery SHopping</h1>
+    <ul class="grocery_list">
+        <li ng-repeat="x in list">Name: <input type="text" ng-model="x.name"/>Quant: <input type="number" ng-model="x.quant" /> Price: $<input type ="number" ng-model="x.price" /></li>
+    </ul>
+    <button class="addRow">Add Item</button>
+    <hr />
+    <p>{{length}} items in list</p>
+    <p><span ng-bind="totalItems()"></span> Total Itmes</p>
+    <p>$ <span ng-bind="totalPrice()"></span>Total Price</p>
+</body>
+</html>
+<script src="js/app.js"></script>
