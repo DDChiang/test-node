@@ -18,64 +18,64 @@
 	   <div id="logo-box"><a href="index.html#/"><img src="logos/gringott-logo.png"> <span id="logo-text">Gringott</span></a></div>
 	   <div id="nav">
 	     <ul>
-		   <li><a href="">INITIATIVE</a></li>
-		   <li><a href="">ABOUT</a></li>
-		   <li><a href="">CONTACT</a></li>
-		   <li><a href="">LOG IN</a></li>
+		   <li><a href="index.html#/">INITIATIVE</a></li>
+		   <li><a href="index.html#/">ABOUT</a></li>
+		   <li><a href="index.html#/">CONTACT</a></li>
+		   <li><a href="index.html#/">LOG IN</a></li>
 		 </ul>
 		 <div id="menu-button"><img src="logos/down-arrow.png"></div>
 	   </div>
 	 </div>
-      <div ng-view></div>
+      <div class="display" ng-view></div>
 	 
 	 <div class="footer">
 	   <div class="footer-links-wrapper">
 	     <div class="footer-link-div" id="link-div-1">
-		   <div class="linker"><a href="#">BENEFITS</a></div>
+		   <div class="linker"><a href="index.html#/">BENEFITS</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-1">
-		   <div class="linker"><a href="#">PLANS</a></div>
+		   <div class="linker"><a href="index.html#/">PLANS</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-1">
-		   <div class="linker"><a href="#">ACCOUNTS</a></div>
+		   <div class="linker"><a href="index.html#/">ACCOUNTS</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-1">
-		   <div class="linker"><a href="#">LOG IN</a></div>
+		   <div class="linker"><a href="index.html#/">LOG IN</a></div>
 		 </div>
 	   </div>
 	   <div class="footer-links-wrapper">
 	     <div class="footer-link-div" id="link-div-2">
-		   <div class="linker"><a href="#">PERSONAL</a></div>
+		   <div class="linker"><a href="index.html#/">PERSONAL</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-2">
-		   <div class="linker"><a href="#">BUSINESS</a></div>
+		   <div class="linker"><a href="index.html#/">BUSINESS</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-2">
-		   <div class="linker"><a href="#">CREDIT & LENDING</a></div>
+		   <div class="linker"><a href="index.html#/">CREDIT & LENDING</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-2">
-		   <div class="linker"><a href="#">INVESTMENTS</a></div>
+		   <div class="linker"><a href="index.html#/">INVESTMENTS</a></div>
 		 </div>
 	   </div>
 	   <div class="footer-links-wrapper">
 	     <div class="footer-link-div" id="link-div-3">
-		   <div class="linker"><a href="#">MORE INFORMATION</a></div>
+		   <div class="linker"><a href="index.html#/">MORE INFORMATION</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-3">
-		   <div class="linker"><a href="#">HELP & SUPPORT</a></div>
+		   <div class="linker"><a href="index.html#/">HELP & SUPPORT</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-3">
-		   <div class="linker"><a href="#">LEARN MORE</a></div>
+		   <div class="linker"><a href="index.html#/">LEARN MORE</a></div>
 		 </div>
 		 <div class="footer-link-div" id="link-div-3">
-		   <div class="linker"><a href="#">APPS</a></div>
+		   <div class="linker"><a href="index.html#/">APPS</a></div>
 		 </div>
 	   </div>
 	   <div class="mix-wrapper">
 	     <div class="notify-blurb">STAY UP TO DATE WITH GRINGOTT NOTIFICATIONS</div>
-		 <form>
-		   <input type="text" id="subscribe-email" placeholder="Type in email here">
-		   <input type="submit" id="subscribe-bttn" value="SUBSCRIBE">
+		 <form name="subscribe">
+		   <input type="email" id="subscribe-email" placeholder="Type in email here" ng-model="subscribeEmail" required value="subEmail">
+             <a href="/gringotts/#/fin" id="subscribe-bttn">SUBSCRIBE</a>
 		 </form>
 		 <div class="soc-med-wrapper">
 			 <div class="soc-med-box"><a href="https://www.twitter.com"><span id="twit">Tw</span></a></div>

@@ -1,7 +1,18 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 app.set('port', (process.env.PORT || 5000));
+
+//parsing tools
+app.use(bodyParser.json()); //support JSON-encoded bodies
+app.use(bodyParser.urlencoded({//support url-encoded bodies
+    extended: true
+}));
+
+//add middle ware to parse post data of body
+//app.use(express.json());
+//app.use(express.urlencoded());
 
 
 //gain access to static files
@@ -32,23 +43,18 @@ app.get('/ang', function (req, res) {
     res.sendFile(__dirname + '/' + '/ang/index-ang.html');
 });
 
+//post
+app.post('/test-page.html', function (req, res) {
+    //var name = req.body.name,
+    //    email = req.body.email;
+    console.log(req.body);
+    res.send(req.body);
+});
+
 //app.get('/web-apps.html', function (req, res) {
 //    res.sendFile(__dirname + '/' + 'web-apps.html');
 //});
 
-//mini sites
-//app.get('/gringotts', function (req, res) {
-//    res.sendFile(__dirname + '/' + 'gringotts');
-//});
-
-//app.get('/odysey', function (req, res) {
-//    res.sendFile(__dirname + '/' + 'odysey');
-//});
-
-//ang
-//app.get('/test-ang', function (req, res) {
-//    res.sendFile(__dirname + '/' + 'index.html');
-//});
 
 //server listen
 

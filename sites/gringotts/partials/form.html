@@ -1,50 +1,73 @@
 ﻿<section class="form">
     <div class="form_container">
-        <form name="signUp" class="sign_up" action="/gringotts/#/fin.html" method="post" autocomplete='on' >
-            <h2>Sign up for an account <span>As easy as 1, 2, 3.</span></h2>
-            First Name: <input type="text" name="fName" ng-model="fName" required/>
-            Last Name: <input type="text" name="lName" ng-model="lName" required/>
+        <h2>Sign up for an account <span>As easy as 1, 2, 3.</span></h2>
+        <form name="signUp" class="sign_up" autocomplete='on' >
+            
+            <span class="first">First Name: </span><input type="text" name="fName" ng-model="fName" required/>
+            <span>Last Name: </span><input type="text" name="lName" ng-model="lName" required/>
             <br />
-            Username: <input type="text" name="uName" ng-model="uName" required />
+            <span class="first">Username: </span><input type="text" name="uName" ng-model="uName" required />
             <br />
-            Email: <input type="email" name="email" ng-model="email" required/>
+            <span class="first">Email: </span><input type="email" name="email" ng-model="email" required/>
+            
+            <span>Retype Email: </span><input type="email" name="emailCon" ng-model="emailCon" required/>
             <br />
-            Retype Email: <input type="email" name="emailCon" ng-model="emailCon" required/>
+            <span class="first">Password: </span><input type="password" name="password" ng-model="password" required/>
+            
+            <span>Retype password: </span><input type="password" name="passwordCon" ng-model="passwordCon" required />
             <br />
-            Password: <input type="password" name="password" ng-model="password" required/>
-            <br />
-            Retype password: <input type="password" name="passwordCon" ng-model="passwordCon" required />
-            <br />
-            <input type="submit" value="Start Your Account" ng-disabled="signUp.fName.$pristine || signUp.lName.$pristine || 
-                signUp.email.$invalid || signUp.email.$pristine || signUp.password.$pristine || (signUp.email.value != signUp.emailCon.value) || (signUp.password.value != signUp.passwordCon.value)"/>
+            <input type="submit" value="Start Your Account" ng-click="newUserTrigger()"
+                ng-disabled="signUp.fName.$pristine || signUp.lName.$pristine || 
+                signUp.email.$invalid || signUp.email.$pristine|| signUp.emailCon.$pristine || signUp.passwordCon.$pristine || signUp.password.$pristine || (signUp.email.value != signUp.emailCon.value)
+             || (signUp.password.value != signUp.passwordCon.value)"
+                />
+                
+                
         </form>
         <p>Already have an account? <a href="#">Log in</a></p>
      </div>
-    <aside>
+    <div class="side">
         <h2>Reach a customer representative</h2>
         <img src="logos/phone.png" />
-    </aside>
+        <p>Phone: <span>(323) 448-4848</span></p>
+        <p>Email: <span><a href="mailto:contact@gringott.com">contact@gringott.com</a></span></p>
+        <p>Or leave us a note.</p>
+    </div>
 </section>
 <section class="contact">
-    <form name="contact" action="/gringotts/#/contact_fin.html" method="post">
+    <form name="contact" ng-submit="triggerPage()" autocomplete="on">
         <h2>Leave us a note</h2>
-        Name: <input type="text" name="contactName" ng-model="contactName" required/><br />
-        Email: <input type="email" name="contactEmail" ng-model="contactEmail" required/><br />
-        What's on your mind? <input type="textarea" placeholder="Type text here" ng-model="contactText" required/><br />
-        Type of problem: 
+        <span>Name: </span><input type="text" name="contactName" ng-model="contactName" required/><br />
+        <span>Email:</span> <input type="email" name="contactEmail" ng-model="contactEmail" required/><br />
+        <span class="large">What's on your mind? </span><textarea rows="9" columns="6" placeholder="Type text here" ng-model="contactText" required></textarea><br />
+        <span class="large">Type of problem: </span>
        
-        <input type="radio" ng-model="contact.problemType" value="1" ng-required="!contact.problemType"/>trouble signing up  
-        <input type="radio" ng-model="contact.problemType" value="2" ng-required="!contact.problemType"/>report site issue 
-        <input type="radio" ng-model="contact.problemType" value="3" ng-required="!contact.problemType"/>other(unspecified)
+        <input type="radio" ng-model="contact.problemType" value="1" ng-required="!contact.problemType"/><span>trouble signing up  </span>
+        <input type="radio" ng-model="contact.problemType" value="2" ng-required="!contact.problemType"/><span>report site issue </span>
+        <input type="radio" ng-model="contact.problemType" value="3" ng-required="!contact.problemType"/><span class="large">other (unspecified)</span>
         <br />
-        <input type="submit" value="submit" ng-disabled="contact.contactName.$pristine || contact.contactEmail.$pristine || contact.contactEmail.$invalid
-            || contact.contactText.$pristine || (!contact.problemType)"/>
+        <input type="submit" value="submit" ng-click="triggerPage()"
+            ng-disabled="contact.contactName.$pristine || contact.contactEmail.$pristine || contact.contactEmail.$invalid
+            || contact.contactText.$pristine || (!contact.problemType)"
+            />
+            
+          
     </form>
 </section>
-<section class="test">
-    <form name="testForm" method="post" action="">
-        Name<input type="text" name="name" ng-model="tName"/>
-        Email<input type="email" name="email" ng-model="tName"/>
-        <input type="submit" value="submit" />
+<!--<section class="test">
+    <form name="testForm" ng-submit="triggerPage()">
+        Name<input type="text" name="name" ng-model="name"/>
+        Email<input type="email" name="email" ng-model="email"/>
+        <input type="submit" value="submit" ng-disabled="testForm.name.$pristine || testForm.name.$invalid || testForm.email.$pristine || testForm.email.$invalid"/>
     </form>
-</section>
+    <a href="/gringotts/#/fin" class="trigger-page" style="display: none;">Test Page</a>
+</section>-->
+<div class="lightbox" id="lightbox1" style="display:none;">
+    <a href="index.html#/" class="trigger-page">Exit</a>
+    <p>Message: {{mess1}}</p>
+</div>
+
+<div class="lightbox" id="lightbox2" style="display:none;">
+    <a href="index.html#/" class="trigger-page">Exit</a>
+    <p>Message: {{mess2}}</p>
+</div>

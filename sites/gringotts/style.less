@@ -1,8 +1,14 @@
-﻿body {
+﻿html
+{
+	display: none;
+}
+
+body {
   width: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Lato', arial, tahoma;
+  background: #cccccc;
 }
 
 .header {
@@ -213,6 +219,7 @@
       text-decoration: none;
       color: white;
     }
+
 }
 
 
@@ -241,11 +248,19 @@
   float: left;
   margin-top: 1.5em;
   margin-left: 1%;
+
+  form
+  {
+	  width: 100%;
+  float: left;
+  }
 }
 
 .notify-blurb {
   margin-bottom: 1.5em;
 }
+
+
 
 #subscribe-email {
   color: #808080;
@@ -253,10 +268,13 @@
   padding: .5em;
   border: none;
   margin-right: 1em;
+  height: 35px;
+  box-sizing: border-box;
+  float: left;
 }
 
 #subscribe-bttn {
-  padding: .5em;
+  
   padding-left: 1.2em;
   padding-right: 1.2em;
   background: #f15a24;
@@ -264,6 +282,13 @@
   color: white;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+    height: 35px;
+  box-sizing: border-box;
+    display: block;
+  width: 120px;
+  float: left;
+    line-height: 35px;
+	  text-align: center;
 
   &:hover
     {
@@ -303,6 +328,236 @@
   width: 100%;
   float: left;
   color: #cccccc;
+}
+
+.lightbox
+{
+	display: block;
+  background: #ddd;
+  width: 80%;
+  height: 400px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+  padding: 31px;
+
+  a.trigger-page
+  {
+	color: #f15a24;
+	float: right;
+	text-decoration: none;
+
+  }
+}
+
+div.display
+{
+	min-height:550px;
+}
+
+//interior
+section
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	  padding: 10px 50px;
+	 
+
+	  h2
+	  {
+		  font-weight: 500;
+		font-size: 1.6em;
+
+		
+	}
+
+	&.contact
+	{	
+		form
+		{
+			padding-bottom: 43px;
+		}
+	
+	}
+
+	form
+	{
+		line-height: 51px;
+		float: left;
+		  width: 100%;
+
+		  
+
+		span
+		{
+			  display: block;
+			  width: 137px;
+			  float: left;
+			  height: auto;
+			  line-height: 24px;
+
+			  &.first
+				{
+					  width: 101px;
+				}
+		}
+
+		input[type="text"], input[type="email"], input[type="textarea"], input[type="password"], input[type="radio"]
+		{
+			border-radius: 4px;
+		  border: 0px;
+		  box-sizing: border-box;
+		  padding: 4px;
+		  width: 151px;
+		  margin-right: 22px;
+			height: 23px;
+			float: left;
+
+			
+		}
+
+		input[type="submit"]
+		{
+			text-decoration: none;
+			//width:10em;
+			padding: .9em 1.3em;
+			background: #f15a24;
+			border: none;
+			color: white;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+			text-transform: uppercase;
+
+			&:hover
+			{
+				background: #808080;
+			}
+
+			&:disabled
+			{
+				background: #808080;
+			}
+		}
+
+		input[type="radio"]
+		{
+			  width: auto;
+			border-radius: 0px;
+		}
+	}
+
+}
+
+section.form
+{
+	background: #b3b3b3;
+	  height: 406px;
+
+	h2
+	{
+		span
+		{
+			font-size: .5em;
+			font-size: .5em;
+		}
+	}
+
+	.form_container
+	{
+		  width: 61%;
+		float: left;
+		min-width: 594px;
+
+		p
+		{
+			a
+			{
+				color: #f15a24;
+				text-decoration: none;
+			}
+		}
+	}
+
+	p
+	{
+		  position: relative;
+		float: left;
+	}
+
+	textarea
+	{
+		  width: 47% !important;
+		  border: 0px;
+		  border-radius: 2px;
+	}
+
+	.side
+	{
+		  float: right;
+			width: 34%;
+			text-align: center;
+
+		  h2
+		  {
+			  font-size: 1em;
+			    margin-top: 33px;
+		  }
+
+		  img
+		  {
+			  display: block;
+			  margin: auto;
+			  text-align: center;
+		  }
+
+		  p
+		  {
+			float: none;
+		  }
+
+		  span
+		  {
+			color: #f15a24;
+			a
+			{
+				color: #f15a24;
+				text-decoration: none;
+			}
+		  }
+	}
+}
+
+section.overhead
+  {
+	  text-align: center;
+	padding-top: 79px;
+
+	a
+	{
+		color: #f15a24;
+		text-decoration: none;
+	}
+  }
+
+@media (max-width:1010px) {
+
+	.form_container
+	{
+		  min-width: 0;
+		width: 100%;
+	}
+
+	.side
+	{
+		display: none;
+	}
+
 }
 
 @media (max-width:900px) {
@@ -379,11 +634,12 @@
   
 }
 
-@media (max-width:612px) {
+@media (max-width:616px) {
   .header {
     background: rgba(0,0,0,0.7);
 	position:absolute;
 	z-index: 3;
+	top:0;
   }
   
   #menu-button {
@@ -433,6 +689,93 @@
   #nav ul li:nth-child(4) {
   margin-bottom: .5%;
   }
+
+  //interior
+  section
+  {
+	  padding: 10px 18px;
+
+	  form
+	  {
+			input[type=text], input[type=email], input[type=textarea], input[type=password]
+			{
+				  margin-right: 358px;
+				    float: left;
+
+					&.first
+					{
+						 width: 151px;
+					}
+			}
+
+			input[type="submit"]
+			{
+				float: left;
+			}
+
+			input[type="radio"]
+			{
+				  margin-right: 8px;
+			}
+
+			span.large
+			{
+				width: 100%;
+			}
+	  }
+  }
+
+  section.form, section.overhead
+  {
+	  margin-top: 148px;
+  }
+
+  
+
+  section.form
+  {
+	height: 527px;
+
+	h2 span
+	{
+		display: none;
+	}
+
+	.form_container
+	{
+		  box-sizing: border-box;
+		  width: 100%;
+		  min-width: 0px;
+
+		  form
+		  {
+			  float: left;
+		  }
+	}
+
+	form input[type="submit"]
+	{
+		margin-top: 13px;
+		float: left;
+	}
+  }
+
+  section.contact 
+  {
+	form 
+	{
+		input[type="submit"]
+		{
+			margin-top: 17px;
+		}
+	}
+  }
+
+  div.display
+{
+	min-height:300px;
+}
+
 }
 
 @media (max-width: 544px) {
@@ -459,4 +802,12 @@
   #caption {
     font-size: 1.2em;
   }
+}
+
+@media (max-width: 376px) {
+	#subscribe-email
+	{
+		  margin-bottom: 17px;
+		    width: 100%;
+	}
 }
