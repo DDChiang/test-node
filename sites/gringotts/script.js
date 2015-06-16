@@ -20,7 +20,8 @@ $(function () {
         }
     }
 
-    $('#menu-button').click(function () {
+    $('#menu-button').click(function (e) {
+        e.stopPropagation();
         if (navHideState) {
             $('#nav ul').slideToggle('medium', function () { });
 
@@ -31,7 +32,7 @@ $(function () {
         var navHidden = $('#nav ul').is(':hidden');
 
         if (navHideState) {
-            if ((!(e.target.closest('.header'))) && (!navHidden)) {
+            if (!navHidden) {
                 $('#nav ul').slideToggle('medium', function () { });
             }
         }
@@ -93,5 +94,3 @@ $(function () {
     });
 
 });
-
-

@@ -1,0 +1,71 @@
+﻿.box-shadow(@arguments) 
+{
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.box-sizing(@sizing: border-box) 
+{
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+.transition(@duration:0.2s, @ease:ease-out) 
+{
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+
+.border-radius(@radius: 2px) 
+{
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+body, *
+{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+body
+{
+    background: url(../images/veggie1.jpg) top center no-repeat;
+      background-size: 1242px;
+        width: 100%;
+}
+
+.container
+{
+    
+    width: 100%;
+     background: #bfae79;
+     background: rgba(255, 255, 255, .7);
+     margin: 0 auto;
+       margin-top: 53px;
+     width: 94%;
+    .box-sizing();
+      padding: 30px 33px;
+      .border-radius(16px);
+}
+
+form[name=addIngred]{
+    color: red;
+
+    
+}
+
+@media only screen and (min-width: 1250px)
+{
+    body
+    {
+        background-size: 100%;
+    }
+}

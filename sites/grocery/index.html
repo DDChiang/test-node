@@ -9,15 +9,40 @@
   <!--  <script src="script.js"></script>-->
 </head>
 <body ng-controller="groceryCtrl">
-    <h1>Dynamic Grocery SHopping</h1>
-    <ul class="grocery_list">
-        <li ng-repeat="x in list">Name: <input type="text" ng-model="x.name"/>Quant: <input type="number" ng-model="x.quant" /> Price: $<input type ="number" ng-model="x.price" /></li>
-    </ul>
-    <button class="addRow">Add Item</button>
-    <hr />
-    <p>{{length}} items in list</p>
-    <p><span ng-bind="totalItems()"></span> Total Itmes</p>
-    <p>$ <span ng-bind="totalPrice()"></span>Total Price</p>
+    <div class="container" id="1">
+        <h1>Dynamic Grocery SHopping</h1>
+        <br />
+        <form name="addIngred">
+            <span>ADD: NAME: </span><br />
+            <input type="text" name="ingredN" ng-model="ingredN" required  /><br />
+            <span>QUANT:</span> <br />
+            <input type="number" ng-model="ingredQ" required  /><br />
+            <span>PRICE:</span><br />
+             $<input type="number" ng-model="ingredP" required /><br />
+            <input type="submit" ng-click="addRow()" value="ADD ITEM" /> <!--ng-disabled="addIngred.ingredN.$pristine || ingredQ.$invalid || ingredQ.$pristine || ingredP.$invalid || ingredP.$pristine"  // ng-dsiabled relies on "name" attr-->
+        </form>
+        
+    </div>
+
+    <div class="container" id="2">
+        <ul class="grocery_list">
+           <!-- <li ng-repeat="x in list">Name: <input type="text" ng-model="x.name"/>Quant: <input type="number" ng-model="x.quant" /> Price: $<input ng-model="x.price" />
+                <input  type="submit" ng-click="deleteRow($index)" value="DELETE"></input>
+            </li>-->
+            <li ng-repeat="x in list">
+                 {{x.quant}} {{x.name}}s x {{x.price}} = {{x.quant*x.price}}
+                <input  type="submit" ng-click="deleteRow($index)" value="-"></input>
+            </li>
+        </ul>
+
+        <hr />
+
+        <p>{{length()}} items in list</p>
+        <p><span ng-bind="totalItems()"></span> Total Itmes</p>
+        <p><span ng-bind="totalPrice() | currency"></span>Total Price</p>   <!--If don't set currency filter, ang keeps rounding to next integer-->
+       <!-- <p>Preview: <span ng-bind="layOutList()"></span></p>-->
+        <p>{{ingredN}}</p>
+    </div>
 </body>
 </html>
 <script src="js/app.js"></script>
