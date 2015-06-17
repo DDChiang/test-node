@@ -77,6 +77,18 @@ h1
        
         margin: 0 auto;
     }
+
+	&:last-child
+	{
+		  margin-top: 18px;
+		margin-bottom: 18px;
+	}
+}
+
+.container:nth-child(2)
+{
+	 margin-top: 18px;
+		margin-bottom: 18px;
 }
 
 input[type="submit"]
@@ -103,52 +115,59 @@ form[name=addIngred]{
               line-height: 27px;
               top: 0px;
               width: 15px;
+			    left: 5px;
+			 z-index: 2;
         }
     }
 
     input
     {
-         margin-bottom: 9px !important;
+         margin-bottom: 9px;
            height: 31px;
             .box-sizing();
             line-height: 31px;
             padding: 0px 6px;
-            width: 164px !important;
+            width: 164px ;
     }
 
     input[name="add"]{
-          background-color: #ea4d16 !important;
+          background-color: #ea4d16;
           border: 0px;
           padding: 0 10px;
           height: 36px;
           line-height: 36px;
           transition: all .2s ease-in-out;
-          width: 116px !important;
+          width: 116px;
+		  color: #fff;
 
           &:hover
           {
-            background-color: #bb3a0c !important;
+            background-color: #bb3a0c;
           }
     }
 
     input[name="price"]
     {
-        width: 150px;
+        
         margin-bottom: 22px;
+		position: relative;
+		padding-left: 16px;
+		left: -14px;
     }
 }
 
 input[name="delete"]
 {
-      width: 37px !important;
+      width: 37px;
       padding: 5px;
-      background-color: #289362 !important;
+      background-color: #289362;
       border: 0px;
       transition: all .2s ease-in-out;
+	  color: #fff;
 
       &:hover
       {
-        background-color: #258056 !important;
+        background-color: #258056;
       }
 }
 
