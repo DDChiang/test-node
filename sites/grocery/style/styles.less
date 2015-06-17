@@ -28,11 +28,21 @@
   border-radius: @radius;
 }
 
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+    background: @color;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @start), color-stop(1, @stop));
+    background: -ms-linear-gradient(bottom, @start, @stop);
+    background: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
+    background: -o-linear-gradient(@stop, @start);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
 body, *
 {
     padding: 0;
     margin: 0;
     list-style-type: none;
+    font-family: 'Lato', sans-serif;
 }
 
 body
@@ -42,25 +52,156 @@ body
         width: 100%;
 }
 
+h1
+{
+      font-size: 30px;
+}
+
 .container
 {
-    
     width: 100%;
-     background: #bfae79;
-     background: rgba(255, 255, 255, .7);
+     background: #181818;
+     background: rgba(36,35, 32, .9);
+       color: #fff;
      margin: 0 auto;
        margin-top: 53px;
      width: 94%;
     .box-sizing();
       padding: 30px 33px;
       .border-radius(16px);
+       max-width: 447px;
+
+    .inner_content
+    {
+        width: 100%;
+       
+        margin: 0 auto;
+    }
+}
+
+input[type="submit"]
+{
+    cursor: pointer;
 }
 
 form[name=addIngred]{
-    color: red;
+     color: #209655;
+      font-weight: 500;
+      font-size: 19px;
 
-    
+    span
+    {
+        margin-bottom: 9px;
+        display: block;
+
+        &.symbol
+        {
+              display: inline-block;
+              height: 27px;
+              /*background: blue;*/
+              position: relative;
+              line-height: 27px;
+              top: 0px;
+              width: 15px;
+        }
+    }
+
+    input
+    {
+         margin-bottom: 9px !important;
+           height: 31px;
+            .box-sizing();
+            line-height: 31px;
+            padding: 0px 6px;
+            width: 164px !important;
+    }
+
+    input[name="add"]{
+          background-color: #ea4d16 !important;
+          border: 0px;
+          padding: 0 10px;
+          height: 36px;
+          line-height: 36px;
+          transition: all .2s ease-in-out;
+          width: 116px !important;
+
+          &:hover
+          {
+            background-color: #bb3a0c !important;
+          }
+    }
+
+    input[name="price"]
+    {
+        width: 150px;
+        margin-bottom: 22px;
+    }
 }
+
+input[name="delete"]
+{
+      width: 37px !important;
+      padding: 5px;
+      background-color: #289362 !important;
+      border: 0px;
+      transition: all .2s ease-in-out;
+
+      &:hover
+      {
+        background-color: #258056 !important;
+      }
+}
+
+.container
+{
+
+    ul.grocery_list
+    {
+        li
+        {
+            margin-bottom: 15px;
+
+            input[name="delete"]
+            {
+                float: right;
+            }
+
+        }
+    }
+
+    .summary
+    {
+        border-top: 1px solid #fff;
+          padding-top: 5px;
+
+        p
+        {
+            line-height: 27px;
+
+            span
+            {
+                margin-right: 5px;
+            }
+        }
+
+
+    }
+}
+
+@media only screen and (min-width: 650px)
+{
+    .container
+    {
+        
+
+        .inner_content
+        {
+
+        }
+    }
+
+}
+
 
 @media only screen and (min-width: 1250px)
 {
@@ -68,4 +209,13 @@ form[name=addIngred]{
     {
         background-size: 100%;
     }
+
+    .container
+    {
+        .inner_content
+        {
+
+        }
+    }
+
 }

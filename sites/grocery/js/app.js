@@ -7,7 +7,6 @@ groceryApp.controller('groceryCtrl', function($scope) {
 	,{ name: 'meat', quant: 4, price: 7.25}, {name: 'grape juice', quant: 2, price : 1.5 }, { name: 'celery', quant: 5, price: .20 }
 	];
 
-	
 
     //check list
 	$scope.layOutList = function () {
@@ -47,16 +46,21 @@ groceryApp.controller('groceryCtrl', function($scope) {
 
     //add row
 	$scope.addRow = function () {
-	    $scope.list.push({
-	        name: $scope.ingredN,
-	        quant: $scope.ingredQ,
-	        price: $scope.ingredP
-	    });
 
-	    //clear input fields
-	    $scope.ingredN = '';
-	    $scope.ingredQ = '';
-	    $scope.ingredP = '';
+	    if (angular.isNumber($scope.ingredQ) && angular.isNumber($scope.ingredP) && (($scope.ingredN + '').length>0))
+	    {
+	        $scope.list.push({
+	            name: $scope.ingredN,
+	            quant: $scope.ingredQ,
+	            price: $scope.ingredP
+	        });
+
+	        //clear input fields
+	        $scope.ingredN = '';
+	        $scope.ingredQ = '';
+	        $scope.ingredP = '';
+	    }
+
 
 	}
 
