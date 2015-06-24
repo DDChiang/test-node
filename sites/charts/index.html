@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Polar Chart UI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="styles/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	
+	</head>
+
+    <style>
+     
+		.show
+		{
+			display: block !important;
+		}
+    </style>
+
+<body>
+    
+	<section class="main" style="position:relative">
+		
+        <canvas id="grabPolar">
+            Wah wah....
+        </canvas>
+        <button id="add_bttn"></button>
+        <button id="edit_bttn"></button>
+        <button id="menu_bttn"></button>
+          <button id="info"></button>
+    </section>
+    <section class="legend">
+        <h2>The Legendary Legend</h2>
+        <div></div>
+    </section>
+    <section class="add_panel">
+         <div>
+		    <label>New Segment Name</label>
+		    <input type="text" name="newSegLab" placeholder="New Seg Name">
+            <label>New Segment Value</label>
+		    <input type="number" name="newSegVal" placeholder="New Seg Value">
+		    <button id="addSeg">Add Segment</button>
+           
+		</div>
+    </section>
+    
+	<section class="menu">
+		<div id="instruct">
+			<h1>Click on one of the segments to edit</h1>
+		</div>
+		<div id="options_panel" style=" display: none;">
+			<button id="close_panel">X</button>
+			<label>New Value</label>
+			<input type="number" name="updateSegVal" placeholder="type new value">
+			<button id="segUpdate">Update Segment</button>
+            <button id="removeSeg">Remove Segment</button><br>
+		</div>
+	</section>
+    <div class="info_box">
+        <button id="close_info">X</button>
+        <p>
+            <span>Project: Graphic UI  built on base Polar Chart functiontionality provided by Chart.js api.</span>
+        </p>
+        <p>Chart.js provides base functions to intialize(draw) the chart and its accompanying legend on page load. 
+        </p>
+        <p>It also provides an extremely basic function to grab the data of a slice on click event and update the chart off present data.
+        </p>
+        <hr />
+       
+        <br />
+        <p>
+            I implemented a <span>"Loop search" deleting and a custom updating function</span> hinging on the slice's "label" value to allow users to delete and update <span>both the data and the resulting chart</span>,  
+            as well as <span>created a UI</span> that strings and glues the functions together for a seamless polar chart maker. 
+        </p>
+		<p>
+			Definitely had a lot of fun creating the random color generator using Math.Random() and an array for hex values.
+		</p>
+       <p> Current Stack: HTML/Less/lots of jQuery
+        </p>
+    </div>
+</body>
+</html>
+
+<script src="js/chart.js"></script>
+<script src="js/script.js"></script>
