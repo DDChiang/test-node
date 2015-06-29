@@ -3,8 +3,8 @@ var groceryApp = angular.module('grocery', []);
 groceryApp.controller('groceryCtrl', function($scope) {
 	$scope.message = 'hee';
 	
-	$scope.list = [{ name: 'banana', quant: 4, price: .25 }, { name: 'apple', quant: 3, price: 0 }, { name: 'orange', quant: 2, price: 1 }
-	,{ name: 'meat', quant: 4, price: 7.25}, {name: 'grape juice', quant: 2, price : 1.5 }, { name: 'celery', quant: 5, price: .20 }
+	$scope.list = [{ name: 'apple', quant: 3, price: 0 }, { name: 'orange', quant: 2, price: 1 }
+	,{ name: 'meat', quant: 4, price: 7.25}, {name: 'grape juice', quant: 2, price : 1.5 }
 	];
 
 
@@ -59,6 +59,10 @@ groceryApp.controller('groceryCtrl', function($scope) {
 	        $scope.ingredN = '';
 	        $scope.ingredQ = '';
 	        $scope.ingredP = '';
+	    }
+	    else
+	    {
+	        alert("please correct your input");
 	    }
 
 
