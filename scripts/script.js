@@ -1,6 +1,7 @@
 var fullPageState = false;
 var browserW = $(window).width();
 
+
 function initFullPage() {
     $('#fullpage').fullpage({
         anchors: ['first', 'sec', 'third', 'four', 'five'],
@@ -13,14 +14,23 @@ function initFullPage() {
 }
 
 function changeFullPageState() {
-    if (browserW > 648) {
-        if (!fullPageState) {
+    if ((browserW > 648)) {
+       
+        if ($('#quicklinks ul').not(':hidden'))
+        {
+            $('#quicklinks ul').is(':hidden')
+        }
+
+        if (!fullPageState)
+        {
             initFullPage();
             fullPageState = true;
         }
+            
     }
     else {
         if (fullPageState) {
+           
             $.fn.fullpage.destroy('all');
             fullPageState = false;
         }
@@ -28,26 +38,34 @@ function changeFullPageState() {
 }
 
 $(function () {
-    changeFullPageState()
+	changeFullPageState();
+	
+	$(".image_slider").flexslider({
+		animation: 'slide',
+		controlNav: false
 
-    $(".image_slider").flexslider({
-        animation: 'slide',
-        controlNav: false
-
-    });
+	});
 
     //quicklinks
-    $(document).click(function () {
-        if (!$('#quicklinks ul').is(':hidden'))   //event.target.closest not supported in IE and mobile?
-        {
-            $('#quicklinks ul').slideToggle('fast', function () { });
-        }
-    });
+	$(document).click(function () {
+	    if (!$('#quicklinks ul').is(':hidden') && (!fullPageState))   //event.target.closest not supported in IE and mobile?
+	    {
+	        $('#quicklinks ul').slideToggle('fast', function () { });
+	    }
+	});
 
-    $('#quicklinks').click(function (e) {
-        e.stopPropagation();
-        $('#quicklinks > ul').slideToggle('fast', function () { });
-    });
+	$('#quicklinks a').click(function (e) {
+	    if (fullPageState)
+	    {
+	       
+	    }
+	    else
+	    {
+	        e.preventDefault();
+	        e.stopPropagation();
+	        $('#quicklinks > ul').slideToggle('fast', function () { });
+	    }
+	});
 
     $(window).scroll(function () {
         $('#quicklinks > ul').css({ 'display': 'none' });
@@ -67,13 +85,17 @@ $(function () {
         }
     });
 
+    var d = new Date();
+    document.getElementById('dateTime').innerHTML = d.toDateString();
+
 });
 
 $(window).resize(function () {
     browserW = $(window).width();
-
     changeFullPageState();
-
 });
 
+$(window).load(function() {
+	$('body').fadeIn(1000, function() {});
+});
 

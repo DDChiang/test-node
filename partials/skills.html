@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" /> <!--Since "stylesheet" folder is already included inside "server1.js", only need to include "file name" here-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <header>
+		<div id="quicklinks">
+			<a href="/">DDChiang</a>
+		
+				<ul>
+					<li><a href="/">Home/Portolio</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="skills.html">Skills</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="resume.html">Resume</a></li>
+				<li><a href="skills.html">Skills</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="page">
+		<p>
+			<span class="title">Skills</span>
+            Web Development: Javascript, jQuery, HTML/LESS/SASS(css), Angular.js, Chart.js<br /><br />
+           Learning: Node.js, Express.js<br /><br />
+            Design: Photoshop, Illustrator, Paint :D<br /><br />
+            Strengths/Interests: Dynamic Data Rendering + Beautiful and Efficient UI's
+		</p>
+	</div>
+   
+  	
+	</body>
+</html>
+<script>
+	$(window).load(function() {
+		$('body').fadeIn(1000, function() {});
+	});
+
+	$(function() {
+		$(document).click(function () {
+			if (!$('#quicklinks ul').is(':hidden'))   //event.target.closest not supported in IE and mobile?
+			{
+				$('#quicklinks ul').slideToggle('fast', function () { });
+			}
+		});
+
+		$('#quicklinks').click(function (e) {
+			e.stopPropagation();
+			$('#quicklinks > ul').slideToggle('fast', function () { });
+		});
+
+		$(window).scroll(function () {
+			$('#quicklinks > ul').css({ 'display': 'none' });
+		});
+	});
+
+</script>

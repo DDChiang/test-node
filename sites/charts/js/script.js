@@ -304,6 +304,3 @@ $(function () {
 	});
 
 });
-
-var allShowing = false;
-var infoShow = false;

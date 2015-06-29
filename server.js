@@ -21,6 +21,7 @@ app.use(express.static('stylesheet'));
 app.use(express.static('js'));
 app.use(express.static('scripts'));
 app.use(express.static('partials'));
+app.use(express.static(__dirname + 'partials'));
 app.use(express.static(__dirname + '/sites'));  //need __dirname
 app.use(express.static('ang'));
 

@@ -76,4 +76,10 @@ groceryApp.controller('groceryCtrl', function($scope) {
 
 });
 
+
+$(window).load(function () {
+    $('body').fadeIn(1000, function () { });
+});
+
+
 	

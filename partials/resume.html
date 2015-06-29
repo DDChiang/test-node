@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" /> <!--Since "stylesheet" folder is already included inside "server1.js", only need to include "file name" here-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+</head>
+<body ng-controller="indexCtrl">
+    
+    <header>
+		<div id="quicklinks">
+			<a href="/">DDChiang</a>
+		
+				<ul>
+					<li><a href="/">Home/Portolio</a></li>
+					<li><a href="resume.html">Resume</a></li>
+					<li><a href="skills.html">Skills</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="resume.html">Resume</a></li>
+				<li><a href="skills.html">Skills</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+   <!--Main Categories-->
+  	<div class="page">
+		<p>Welcome to my short history.<br /><br /></p>
+          <p class="hero">
+			<span class="title">Deedee Chiang</span>
+            <a href="mailto:ddeechng@mail.com">ddeechng@gmail.com</a> | 626-487-7730
+           
+		</p>
+          <p>
+			<span class="title">Skills</span>
+            Web Development: Javascript, jQuery, HTML/LESS/SASS(css), Angular.js, Chart.js<br /><br />
+           Learning: Node.js, Express.js<br /><br />
+		</p>
+		<p>
+            <span class="title">Most Recent Experience</span>
+			    Front End Web Developer @ Vision Internet
+                <span class="date">11/14-Present</span><br /><br />
+                - Translated designs and style guides provided by UX/Project teams into functional cross-browser sites<br /><br />
+                - Created and customized jQuery plugin solutions for client projects <br /><br />
+                - Stack: jQuery, js, HTML/LESS/CSS<br><br>
+		</p>
+		<p>
+			<span class="title">Projects</span>
+            <a href="/charts">Polar Chart UI</a> - Polar Area Chart User Interface based off of chart.js api<br />
+            <a href="/grocery">Grocery</a> - Daily grocery calculator built with Angular<br />
+            <a href="/gringott">Gringott Bank</a> - Minimalist bank design with form validation<br />
+           
+		</p>
+		<p>
+			<span class="title">Sites I worked on while at Vision Internet</span>
+            <a href="http://www.mesaaz.gov/">Mesa, AZ</a><br />
+            <a href="http://www.provo.org/">Provo, UT</a><br />
+            <a href="http://www.co.monterey.ca.us/">Monterey, CA</a><br />
+            <a href="http://www.weho.org">West Hollywood, CA</a><br />
+            <a href="http://www.fortlauderdale.gov/">Fort Lauderdale, Fl</a><br />
+             <a href="http://www.cityofgoleta.org/home">Goleta</a> + many...many... more...<br />
+           
+		</p>
+		<p>
+			<span class="title">Education</span>
+		    UCLA, B.A. Business Economic <span class="date">Sept 2010-2013</span><br /><br />
+            
+		</p>
+	</div>
+</body>
+</html>
+<script>
+	$(window).load(function() {
+		$('body').fadeIn(1000, function() {});
+	});
+
+	$(function() {
+		$(document).click(function () {
+			if (!$('#quicklinks ul').is(':hidden'))   //event.target.closest not supported in IE and mobile?
+			{
+				$('#quicklinks ul').slideToggle('fast', function () { });
+			}
+		});
+
+		$('#quicklinks').click(function (e) {
+			e.stopPropagation();
+			$('#quicklinks > ul').slideToggle('fast', function () { });
+		});
+
+		$(window).scroll(function () {
+			$('#quicklinks > ul').css({ 'display': 'none' });
+		});
+	});
+
+</script>

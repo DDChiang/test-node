@@ -1,4 +1,10 @@
-$(document).ready(function(){
+
+$(window).load(function () {
+    $('body').fadeIn(1000, function () { });
+});
+
+
+$(document).ready(function () {
   var $window = $(window);
   var w = $(window).width();
   
