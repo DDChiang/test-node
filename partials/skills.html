@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </head>
-<body>
+<body class="short">
     
     <header>
 		<div id="quicklinks">
@@ -36,7 +36,12 @@
             Web Development: Javascript, jQuery, HTML/LESS/SASS(css), Angular.js, Chart.js<br /><br />
            Learning: Node.js, Express.js<br /><br />
             Design: Photoshop, Illustrator, Paint :D<br /><br />
-            Strengths/Interests: Dynamic Data Rendering + Beautiful and Efficient UI's
+            Strengths/Interests: Dynamic Data Rendering + Beautiful and Efficient UI's<br /><br />
+           Github/<a href="https://github.com/DDChiang/">DDChiang</a><br /><br />
+            <a href="https://github.com/DDChiang/test-node/tree/master/sites/charts">Github - Polar Chart UI</a><br /><br />
+           <a href="https://github.com/DDChiang/test-node/tree/master/sites/grocery"> Github - Grocery App</a><br /><br />
+            <a href="https://github.com/DDChiang/test-node/tree/master/sites/gringotts">Github - Gringotts</a><br /><br />
+            
 		</p>
 	</div>
    
@@ -44,26 +49,62 @@
 	</body>
 </html>
 <script>
+    var fullPageState = false;
+    var browserW = $(window).width();
+
+    function changeFullPageState() {
+        if ((browserW > 648)) {
+
+            if ($('#quicklinks ul').not(':hidden')) {
+                $('#quicklinks ul').is(':hidden')
+            }
+
+            if (!fullPageState) {
+                fullPageState = true;
+            }
+
+        }
+        else {
+            if (fullPageState) {
+                fullPageState = false;
+            }
+        }
+    }
+
 	$(window).load(function() {
 		$('body').fadeIn(1000, function() {});
 	});
 
-	$(function() {
-		$(document).click(function () {
-			if (!$('#quicklinks ul').is(':hidden'))   //event.target.closest not supported in IE and mobile?
-			{
-				$('#quicklinks ul').slideToggle('fast', function () { });
-			}
-		});
+	$(function () {
 
-		$('#quicklinks').click(function (e) {
-			e.stopPropagation();
-			$('#quicklinks > ul').slideToggle('fast', function () { });
-		});
+	    changeFullPageState();
+
+	    $(document).click(function () {
+	        if (!$('#quicklinks ul').is(':hidden') && (!fullPageState))   //event.target.closest not supported in IE and mobile?
+	        {
+	            $('#quicklinks ul').slideToggle('fast', function () { });
+	        }
+	    });
+
+	    $('#quicklinks a').click(function (e) {
+	        if (fullPageState) {
+
+	        }
+	        else {
+	            e.preventDefault();
+	            e.stopPropagation();
+	            $('#quicklinks > ul').slideToggle('fast', function () { });
+	        }
+	    });
 
 		$(window).scroll(function () {
 			$('#quicklinks > ul').css({ 'display': 'none' });
 		});
+	});
+
+	$(window).resize(function () {
+	    browserW = $(window).width();
+	    changeFullPageState();
 	});
 
 </script>

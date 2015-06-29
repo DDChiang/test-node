@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  
 </head>
-<body >
+<body class="short">
     
     <header>
 		<div id="quicklinks">
@@ -33,7 +33,8 @@
     <div class="float">
         Contact Me!<br /><br />
         <p>
-           Deedee: <a href="mailto:ddeechng@mail.com">ddeechng@gmail.com</a> | 626-487-7730
+           Deedee:<br /><br />
+             <a href="mailto:ddeechng@mail.com">ddeechng@gmail.com</a> | 626-487-7730
         </p>
         
     </div>
@@ -41,26 +42,62 @@
 	</body>
 </html>
 <script>
-	$(window).load(function() {
-		$('body').fadeIn(1000, function() {});
-	});
+    var fullPageState = false;
+    var browserW = $(window).width();
 
-	$(function() {
-		$(document).click(function () {
-			if (!$('#quicklinks ul').is(':hidden'))   //event.target.closest not supported in IE and mobile?
-			{
-				$('#quicklinks ul').slideToggle('fast', function () { });
-			}
-		});
+    function changeFullPageState() {
+        if ((browserW > 648)) {
 
-		$('#quicklinks').click(function (e) {
-			e.stopPropagation();
-			$('#quicklinks > ul').slideToggle('fast', function () { });
-		});
+            if ($('#quicklinks ul').not(':hidden')) {
+                $('#quicklinks ul').is(':hidden')
+            }
 
-		$(window).scroll(function () {
-			$('#quicklinks > ul').css({ 'display': 'none' });
-		});
-	});
+            if (!fullPageState) {
+                fullPageState = true;
+            }
+
+        }
+        else {
+            if (fullPageState) {
+                fullPageState = false;
+            }
+        }
+    }
+
+    $(window).load(function () {
+        $('body').fadeIn(1000, function () { });
+    });
+
+    $(function () {
+
+        changeFullPageState();
+
+        $(document).click(function () {
+            if (!$('#quicklinks ul').is(':hidden') && (!fullPageState))   //event.target.closest not supported in IE and mobile?
+            {
+                $('#quicklinks ul').slideToggle('fast', function () { });
+            }
+        });
+
+        $('#quicklinks a').click(function (e) {
+            if (fullPageState) {
+
+            }
+            else {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#quicklinks > ul').slideToggle('fast', function () { });
+            }
+        });
+
+        $(window).scroll(function () {
+            $('#quicklinks > ul').css({ 'display': 'none' });
+        });
+    });
+
+    $(window).resize(function () {
+        browserW = $(window).width();
+        changeFullPageState();
+    });
 
 </script>

@@ -42,6 +42,7 @@
 			<span class="title">Skills</span>
             Web Development: Javascript, jQuery, HTML/LESS/SASS(css), Angular.js, Chart.js<br /><br />
            Learning: Node.js, Express.js<br /><br />
+           Github: <a href="https://github.com/DDChiang/">github.com/DDChiang</a><br /><br />
 		</p>
 		<p>
             <span class="title">Most Recent Experience</span>
@@ -77,26 +78,62 @@
 </body>
 </html>
 <script>
-	$(window).load(function() {
-		$('body').fadeIn(1000, function() {});
-	});
+    var fullPageState = false;
+    var browserW = $(window).width();
 
-	$(function() {
-		$(document).click(function () {
-			if (!$('#quicklinks ul').is(':hidden'))   //event.target.closest not supported in IE and mobile?
-			{
-				$('#quicklinks ul').slideToggle('fast', function () { });
-			}
-		});
+    function changeFullPageState() {
+        if ((browserW > 648)) {
 
-		$('#quicklinks').click(function (e) {
-			e.stopPropagation();
-			$('#quicklinks > ul').slideToggle('fast', function () { });
-		});
+            if ($('#quicklinks ul').not(':hidden')) {
+                $('#quicklinks ul').is(':hidden')
+            }
 
-		$(window).scroll(function () {
-			$('#quicklinks > ul').css({ 'display': 'none' });
-		});
-	});
+            if (!fullPageState) {
+                fullPageState = true;
+            }
+
+        }
+        else {
+            if (fullPageState) {
+                fullPageState = false;
+            }
+        }
+    }
+
+    $(window).load(function () {
+        $('body').fadeIn(1000, function () { });
+    });
+
+    $(function () {
+
+        changeFullPageState();
+
+        $(document).click(function () {
+            if (!$('#quicklinks ul').is(':hidden') && (!fullPageState))   //event.target.closest not supported in IE and mobile?
+            {
+                $('#quicklinks ul').slideToggle('fast', function () { });
+            }
+        });
+
+        $('#quicklinks a').click(function (e) {
+            if (fullPageState) {
+
+            }
+            else {
+                e.preventDefault();
+                e.stopPropagation();
+                $('#quicklinks > ul').slideToggle('fast', function () { });
+            }
+        });
+
+        $(window).scroll(function () {
+            $('#quicklinks > ul').css({ 'display': 'none' });
+        });
+    });
+
+    $(window).resize(function () {
+        browserW = $(window).width();
+        changeFullPageState();
+    });
 
 </script>
