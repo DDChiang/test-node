@@ -105,7 +105,8 @@
 	function returnData() {
 		//hide loader
 		$loader.fadeOut(300, function() {});
-	
+		
+		
 		//$('.check_data').append(JSON.stringify(locationArray));
 		//console.log(JSON.stringify(locationArray));
 		
@@ -326,6 +327,8 @@
                         'class': 'label-line'
                     });
 
+				$('.event_log').fadeIn(300, function() {});	
+					
                 slices.call(div);
 
                 
