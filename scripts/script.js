@@ -4,7 +4,7 @@ var browserW = $(window).width();
 
 function initFullPage() {
     $('#fullpage').fullpage({
-        anchors: ['first', 'sec', 'third', 'four', 'five'],
+        anchors: ['first', 'sec', 'third', 'four', 'five', 'six'],
         navigation: true,
         navigationPosition: 'right',
         verticalCenterd: true,
@@ -37,7 +37,17 @@ function changeFullPageState() {
     }
 }
 
-$(function () {
+
+
+$(window).resize(function () {
+    browserW = $(window).width();
+    changeFullPageState();
+});
+
+$(window).load(function() {
+	$('body').fadeIn(1000, function() {});
+	
+	$(function () {
 	changeFullPageState();
 	
 	$(".image_slider").flexslider({
@@ -89,13 +99,5 @@ $(function () {
     document.getElementById('dateTime').innerHTML = d.toDateString();
 
 });
-
-$(window).resize(function () {
-    browserW = $(window).width();
-    changeFullPageState();
-});
-
-$(window).load(function() {
-	$('body').fadeIn(1000, function() {});
 });
 

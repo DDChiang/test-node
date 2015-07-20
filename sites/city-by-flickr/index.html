@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+	<link href='styles/stylesheet.css' rel='stylesheet'>
+	<style>
+	
+	
+	</style>
+	
+    <!-- <link rel="stylesheet" href="stylesheet.css" /> -->
+	</head>
+	<body>
+		<!-- <input type="text" id="place">
+		<button id="submit_place">Submit Place</button> -->
+		<section class="intro">
+			<h1>Top Visited Places in Flickr Data</h1>
+			<p>This web app displays the top 9 most visited cities in flickr data, pooling photo counts from the top 100 tags for each major city.</p>
+			<p>Stack: D3.JS + AJAX + flickr.GetHotList API + flickr.places.find API</p>
+		</section>
+		<section class="event_log">
+			<h1>Major Event Log</h1>
+			<ul>
+				<li>
+					<h1 class="title">July 16</h1>
+					<div class="box_content">
+						<p>There was a major spike for Los Angeles under the tag "#PauleyPavilion"</p>
+						<p>Coincidentally on the same day, Stephen Curry accepted the award for "sickest moves" at the 2015 Kid's Choice Sports Awards Show which premiered at UCLA Pauley Pavilion.</p>
+					</div>
+				</li>
+				<li>
+					<h1 class="title">July 20</h1>
+					<div class="box_content">
+						<p>July 20: Jakarta, Indonesia saw spikes for the tag "#Performance"</p>
+						<p>
+							The Icons performed live at Gandaria City from 7 - 9 pm.<br>
+							Twitter: <a href="https://twitter.com/theiconsband">https://twitter.com/theiconsband</a><br>
+							<!-- Src: <a href="http://www.songkick.com/metro_areas/29154-indonesia-jakarta">http://www.songkick.com/metro_areas/29154-indonesia-jakarta</a> -->
+						</p>
+					</div>
+				</li>
+			</ul>
+			
+			
+		</section>
+		<hr>
+		<section class="chart_container">
+			<svg class="pie"></svg>
+		</section>
+		<div class="lightbox">
+			<h1 class="title">Date: <span></span></h1>
+			<div class="inner_content"></div>
+			<span class="close">X</span>
+		</div>
+		<img class="loader" src="ajax-loader.gif">
+	</body>
+</html>
+<script src="script.js"></script>
