@@ -33,6 +33,7 @@ var polarData = [
     }
 ];
 
+var allShowing = false;
 
 $(function () {
 	//random color gen
